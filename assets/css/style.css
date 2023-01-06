@@ -6,47 +6,68 @@
 }
 body
 {
-    background-color: #053272;
+    background-color: #000f14;
 }
 header {
     z-index: 100000;
-    position: fixed;
+    position: sticky;
     top: 0;
     display: flex;
     width: 100%;
-    background: linear-gradient(rgb(67, 143, 173) 0%,rgba(41, 36, 90, 0) 100%);
-    padding: 1vw;
-    align-items: center;
+    min-height: 50%;
+    max-height: 200%;
+    background-color: #00171f;
+    box-shadow: 0px 0px 2px 0.5px #003459;
+    border-radius: 3px;
+    justify-content: center;
+    transition: 1s;
+    flex-wrap: wrap;
+    
+}
+header:hover, a:hover header
+{
+    transition: 1s;
+    box-shadow: 0px 0px 10px 1px #00A8E8;
 }
 a{
-    background: linear-gradient(rgb(21, 21, 45), rgba(21, 21, 45, 0));
+    background-color: #001820;
     color: rgb(255, 255, 255);
-    border-right: 1px solid rgba(52,52,64,.1843137255);
-    margin-right: 0.8vw;
-    padding-right: 0.8vw;
+    border-bottom: 5px solid #000f14;
+    border-radius: 15px;
+    text-align: center;
+    flex-basis: auto;
+    max-width: 100%;
+    min-width: 20%;
+    max-height: 75%;
+    min-height: 25%;
+    margin: 25px;
+    padding: 5px;
+    font-family: 'exo', sans-serif;
     color: #ffffff;
-    background: transparent!important;
-    font-size: 1vw;
+    text-shadow: 0px 0px 6px #000f14;
+    font-size: 200%;
     transition: .25s;
     cursor: pointer;
 }
+#start {
+    background: linear-gradient(130deg, #73FBD3, #44E5E7, #59D2FE, #4A8FE7, #5C7AFF);
+}
 a, a:hover, a:focus {
-    text-decoration: none;
+    text-decoration: solid;
 }
-.a:hover, .a:focus {
-    color: #ffffff;
-}
-a:hover, #menu>a:focus {
-    color: #57dcbe;
+a:hover, a:focus {
+    border-color: #00A8E8;
+    transition: .25s;
+    text-shadow: 0px 0px 1px #00A8E8;
 }
 h2 {
     color: #ffffff;
-    font-size: 3vw;
+    font-size: 80px;
     text-align: center;
 }
 #intro
 {
-    padding: 5vw 0px 5vw 0px;
+    padding: 75px 0px 75px 0px;
 }
 #gallery {
     display: grid;
@@ -81,4 +102,8 @@ h2 {
     0% { background-position: 100% 0%;}
 	50% { background-position: 50% 50%;}
 	100% { background-position: 0% 100%;}
+}
+@font-face {
+    font-family: "MinecraftFont";
+    src: url("../Fonts/minecraft-enchantment.ttf") format("ttf");
 }
