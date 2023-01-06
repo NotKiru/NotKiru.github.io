@@ -8,23 +8,22 @@ body
 {
     background-color: #000f14;
 }
-header {
-    z-index: 100000;
-    position: sticky;
+.topnav {
+    overflow: hidden;
+    z-index: 10;
+    position: fixed;
     top: 0;
+    left: 0;
     display: flex;
     width: 100%;
-    min-height: 50%;
-    max-height: 200%;
     background-color: #00171f;
     box-shadow: 0px 0px 2px 0.5px #003459;
     border-radius: 3px;
     justify-content: center;
     transition: 1s;
     flex-wrap: wrap;
-    
 }
-header:hover, a:hover header
+.topnav:hover, a:hover .topnav
 {
     transition: 1s;
     box-shadow: 0px 0px 10px 1px #00A8E8;
@@ -35,22 +34,19 @@ a{
     border-bottom: 5px solid #000f14;
     border-radius: 15px;
     text-align: center;
-    flex-basis: auto;
-    max-width: 100%;
+    text-overflow: clip;
+    max-width: 20%;
     min-width: 20%;
-    max-height: 75%;
-    min-height: 25%;
-    margin: 25px;
-    padding: 5px;
+    max-height: 20%;
+    min-height: 20%;
+    margin: 1vw;
+    padding: 0.5vw;
     font-family: 'exo', sans-serif;
     color: #ffffff;
     text-shadow: 0px 0px 6px #000f14;
     font-size: 200%;
     transition: .25s;
     cursor: pointer;
-}
-#start {
-    background: linear-gradient(130deg, #73FBD3, #44E5E7, #59D2FE, #4A8FE7, #5C7AFF);
 }
 a, a:hover, a:focus {
     text-decoration: solid;
@@ -60,6 +56,16 @@ a:hover, a:focus {
     transition: .25s;
     text-shadow: 0px 0px 1px #00A8E8;
 }
+.topnav a.active {
+    background: linear-gradient(130deg, #73FBD3, #44E5E7, #59D2FE, #4A8FE7, #5C7AFF);
+    color: white;
+}
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    justify-self: left;
+    display: none;
+  }
 h2 {
     color: #ffffff;
     font-size: 80px;
@@ -67,7 +73,7 @@ h2 {
 }
 #intro
 {
-    padding: 75px 0px 75px 0px;
+    padding: 150px 0px 150px 0px;
 }
 #gallery {
     display: grid;
@@ -107,3 +113,20 @@ h2 {
     font-family: "MinecraftFont";
     src: url("../Fonts/minecraft-enchantment.ttf") format("ttf");
 }
+@media screen and (max-width: 850px) {
+    .topnav {justify-content: start;}
+    .topnav a {display: none;}
+    .topnav a.icon {
+        display: inline-block;
+    }
+  }
+  
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 850px) {
+    .topnav.responsive {position: fixed; width: 100%; justify-content: center; flex-direction: column;}
+    .topnav.responsive a:not(:first-child) {
+        max-width: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+  }
