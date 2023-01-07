@@ -19,7 +19,7 @@ body
     background-color: #00171f;
     box-shadow: 0px 0px 2px 0.5px #003459;
     border-radius: 3px;
-    justify-content: center;
+    justify-content: end;
     transition: 1s;
     flex-wrap: wrap;
 }
@@ -29,24 +29,28 @@ body
     box-shadow: 0px 0px 10px 1px #00A8E8;
 }
 a{
-    background-color: #001820;
-    color: rgb(255, 255, 255);
-    border-bottom: 5px solid #000f14;
-    border-radius: 15px;
     text-align: center;
     text-overflow: clip;
-    max-width: 20%;
-    min-width: 20%;
+    font-family: sans-serif;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px #000f14;
+    width: 100%;
+    height: 100%;
+    font-size: 200%;
+    transition: .25s;
+    cursor: pointer;
+}
+li, .topnav .icon {
+    text-align: center;
+    background-color: #001820;
+    border-bottom: 5px solid #000f14;
+    border-radius: 15px;
+    max-width: 25%;
+    min-width: 10%;
     max-height: 20%;
     min-height: 20%;
     margin: 1vw;
     padding: 0.5vw;
-    font-family: 'exo', sans-serif;
-    color: #ffffff;
-    text-shadow: 0px 0px 6px #000f14;
-    font-size: 200%;
-    transition: .25s;
-    cursor: pointer;
 }
 a, a:hover, a:focus {
     text-decoration: solid;
@@ -56,14 +60,13 @@ a:hover, a:focus {
     transition: .25s;
     text-shadow: 0px 0px 1px #00A8E8;
 }
-.topnav a.active {
+.topnav li.active {
     background: linear-gradient(130deg, #73FBD3, #44E5E7, #59D2FE, #4A8FE7, #5C7AFF);
     color: white;
 }
   
   /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
-    justify-self: left;
+.topnav .icon {
     display: none;
   }
 h2 {
@@ -75,35 +78,18 @@ h2 {
 {
     padding: 150px 0px 150px 0px;
 }
-#gallery {
-    display: grid;
-    display: inline-grid;
-    margin: auto;
-    max-width: 80%;
-    background-color: #1f2630;
-    height: 50vw;
-    border-radius: 5px;
-    box-shadow: 0px 0px 1vw 0.5vw #57ACDC;
-}
-#gallery>div
+#myTopnav>div
 {
-    background-color: #14181f;
-    max-width: 40%;
-    width: 40vw;
-    color: #ffffff;
-    font-size: 2vw;
-}
-#gallery>div>#img
-{
-    width: 90%;
-    margin:auto;
-}
-#gallery>div>#img>img
-{
-    border-radius: 10px;
-    height: 100%;
     width: 100%;
 }
+ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    transition: 1s;
+    flex-wrap: wrap;
+} 
 @keyframes gradient {
     0% { background-position: 100% 0%;}
 	50% { background-position: 50% 50%;}
@@ -114,8 +100,8 @@ h2 {
     src: url("../Fonts/minecraft-enchantment.ttf") format("ttf");
 }
 @media screen and (max-width: 850px) {
-    .topnav {justify-content: start;}
-    .topnav a {display: none;}
+    .topnav {justify-content: end;}
+    .topnav li {display: none;}
     .topnav a.icon {
         display: inline-block;
     }
@@ -123,10 +109,11 @@ h2 {
   
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 850px) {
-    .topnav.responsive {position: fixed; width: 100%; justify-content: center; flex-direction: column;}
-    .topnav.responsive a:not(:first-child) {
+    .topnav.responsive {position: fixed; width: 100%; flex-direction: column; justify-content: end;}
+    .topnav.responsive li {
         max-width: 100%;
-        width: 100%;
+        width: 80%;
         display: inline-block;
+        margin: auto;
     }
   }
