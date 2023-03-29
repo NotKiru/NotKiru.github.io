@@ -55,7 +55,7 @@ body {
 }
 
 #baner {
-    background-image: url("../IMG/baner.jpg");
+    background-image: url("../assets/img/baner.jpg");
     background-position: center;
     background-size: cover;
     min-height: 60.5rem;
